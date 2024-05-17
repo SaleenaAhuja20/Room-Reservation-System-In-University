@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 17, 2024 at 08:41 PM
+-- Host: 127.0.0.1
+-- Generation Time: May 17, 2024 at 09:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -46,6 +46,22 @@ INSERT INTO `admin` (`Admin_Name`, `Admin_Email`, `Admin_Password`, `Admin_Id`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mackup_form`
+--
+
+CREATE TABLE `mackup_form` (
+  `Instructor_Name` varchar(255) NOT NULL,
+  `Instructor_Email` varchar(255) NOT NULL,
+  `Course` varchar(255) NOT NULL,
+  `Capicity Of Students` int(11) NOT NULL,
+  `Section` varchar(11) NOT NULL,
+  `Day` varchar(255) NOT NULL,
+  `Form_Id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `teacher`
 --
 
@@ -70,10 +86,10 @@ INSERT INTO `teacher` (`Teacher_Name`, `Teacher_Email`, `Teacher_Password`, `Cou
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `mackup_form`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`Admin_Id`);
+ALTER TABLE `mackup_form`
+  ADD PRIMARY KEY (`Form_Id`);
 
 --
 -- Indexes for table `teacher`
@@ -86,10 +102,10 @@ ALTER TABLE `teacher`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `mackup_form`
 --
-ALTER TABLE `admin`
-  MODIFY `Admin_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `mackup_form`
+  MODIFY `Form_Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `teacher`
