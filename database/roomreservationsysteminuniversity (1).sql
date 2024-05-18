@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 17, 2024 at 09:38 PM
+-- Host: localhost:3306
+-- Generation Time: May 18, 2024 at 06:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -46,18 +46,34 @@ INSERT INTO `admin` (`Admin_Name`, `Admin_Email`, `Admin_Password`, `Admin_Id`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mackup_form`
+-- Table structure for table `schedule`
 --
 
-CREATE TABLE `mackup_form` (
-  `Instructor_Name` varchar(255) NOT NULL,
-  `Instructor_Email` varchar(255) NOT NULL,
-  `Course` varchar(255) NOT NULL,
-  `Capicity Of Students` int(11) NOT NULL,
-  `Section` varchar(11) NOT NULL,
+CREATE TABLE `schedule` (
+  `Teacher_id` int(100) NOT NULL,
+  `Teacher_Name` varchar(255) NOT NULL,
   `Day` varchar(255) NOT NULL,
-  `Form_Id` int(11) NOT NULL
+  `Slot` varchar(255) DEFAULT NULL,
+  `Room` varchar(255) NOT NULL,
+  `Section` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`Teacher_id`, `Teacher_Name`, `Day`, `Slot`, `Room`, `Section`) VALUES
+(5, 'Syed Hassan', 'Monday', '11 - 1', 'LAB-4 ', '2B'),
+(5, 'Syed Hassan', 'Tuesday', '8 - 11\r\n', 'CS LAB', '2B'),
+(5, 'Syed Hassan', 'Friday', '11 - 1', 'Smart LAB', '2B'),
+(5, 'Syed Hassan', 'Thursday', '3 - 6', 'LAB 4', '2B'),
+(6, 'Syed Hurrar Hasan Rizvi', 'Monday', '8 - 11', 'CS LAB', '2A'),
+(6, 'Syed Hurrar Hasan Rizvi', 'Wednesday', '3 - 6', 'AI LAB', '2A'),
+(6, 'Syed Hurrar Hasan Rizvi', 'Saturday', '8 - 11', 'CS LAB', '2A'),
+(6, 'Syed Hurrar Hasan Rizvi', 'Friday', '3 - 6', 'Smart Lab', '2A'),
+(7, 'Usama Khalid', 'Tuesday', '3 - 6', 'LAB 4', '1B'),
+(7, 'Usama Khalid', 'Wednesday', '11 - 1', 'Smart LAB', '1B'),
+(7, 'Usama Khalid', 'Friday', '8 - 11', 'AI LAB', '1B');
 
 -- --------------------------------------------------------
 
@@ -78,40 +94,60 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`Teacher_Name`, `Teacher_Email`, `Teacher_Password`, `Course`, `Teacher_id`) VALUES
-('Syed Hurrar Hassan Rizvi\r\n', 'syed.hurrar@szabist.pk', 'Rizvi#123', 'Object Oriented Programming Lab', 3),
-('SYED HASSAN', 'syed.hassan@szabist.pk', 'syed.123', 'Object Oriented Programming', 4);
+('Syed Hassan', 'syed.hassan@szabist.pk', 'syed.123', 'Object Oriented Programming', 5),
+('Syed Hurrar Hasan Rizvi', 'syed.hurrar@szabist.pk', 'Rizvi#123', 'Object Oriented Programming Lab', 6),
+('Usama Khalid', 'usama.khalid@szabist.pk', 'abc.123', 'Fundamental Of Programming ', 7);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `mackup_form`
+-- Indexes for table `admin`
 --
-ALTER TABLE `mackup_form`
-  ADD PRIMARY KEY (`Form_Id`);
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`Admin_Id`);
+
+--
+-- Indexes for table `schedule`
+--
+ALTER TABLE `schedule`
+  ADD KEY `fk_Teacher` (`Teacher_id`),
+  ADD KEY `fk_teacher_name` (`Teacher_Name`);
 
 --
 -- Indexes for table `teacher`
 --
 ALTER TABLE `teacher`
-  ADD PRIMARY KEY (`Teacher_id`);
+  ADD PRIMARY KEY (`Teacher_id`),
+  ADD UNIQUE KEY `Teacher_Name` (`Teacher_Name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `mackup_form`
+-- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `mackup_form`
-  MODIFY `Form_Id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `admin`
+  MODIFY `Admin_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `Teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `schedule`
+--
+ALTER TABLE `schedule`
+  ADD CONSTRAINT `fk_Teacher` FOREIGN KEY (`Teacher_id`) REFERENCES `teacher` (`Teacher_id`),
+  ADD CONSTRAINT `fk_teacher_name` FOREIGN KEY (`Teacher_Name`) REFERENCES `teacher` (`Teacher_Name`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

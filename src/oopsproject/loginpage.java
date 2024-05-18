@@ -195,8 +195,9 @@ public class loginpage extends javax.swing.JFrame {
  
          try {
              boolean LoginSuccess = false;
+             int teacherId = -1;
          while (resultSet.next()) {
-            int ID = resultSet.getInt("Teacher_id");
+            teacherId = resultSet.getInt("Teacher_id");
             String dbEmail= resultSet.getString("Teacher_Email");
            String dbPassword= resultSet.getString("Teacher_Password");
             String name = resultSet.getString("Teacher_Name");
@@ -208,6 +209,7 @@ public class loginpage extends javax.swing.JFrame {
                   LoginSuccess = true;
                   JOptionPane.showMessageDialog(loginpage.this, "Login successfully");
                   new teacherForm().setVisible(true);
+                  this.dispose();
                   break;
               } 
          }
@@ -220,10 +222,12 @@ public class loginpage extends javax.swing.JFrame {
              try{
                   if (resultSet != null) {
                 resultSet.close();
-            }
+
+                  }
                   conn.close();
+                  
              }catch (Exception e) {
-               System.out.println(e);
+              e.printStackTrace();
         }
          }
                

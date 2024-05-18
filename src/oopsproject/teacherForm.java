@@ -11,6 +11,8 @@ package oopsproject;
  * @author Siloo
  */
 public class teacherForm extends javax.swing.JFrame {
+    private int teacherId;
+    
 
     /**
      * Creates new form JFrame2
@@ -40,6 +42,11 @@ public class teacherForm extends javax.swing.JFrame {
 
         btnshowschedule.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnshowschedule.setText("Your Schedule");
+        btnshowschedule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnshowscheduleActionPerformed(evt);
+            }
+        });
 
         btnMakeup.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnMakeup.setText("Makeup class form");
@@ -82,6 +89,11 @@ public class teacherForm extends javax.swing.JFrame {
         new MakeupForm().setVisible(true);
         
     }//GEN-LAST:event_btnMakeupActionPerformed
+       
+    private void btnshowscheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshowscheduleActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnshowscheduleActionPerformed
 
     /**
      * @param args the command line arguments

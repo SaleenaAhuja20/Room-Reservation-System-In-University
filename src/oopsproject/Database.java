@@ -40,8 +40,28 @@ class Database {
             }
             return null;
         }
-
-    Object getConnection() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ResultSet fetchTeacherSchedule(int teacherId){
+        ResultSet resultSet = null;
+        try {
+            String query = "SELECT * FROM schedule WHERE Teacher_id = ?";
+            PreparedStatement ps = db.prepareStatement(query);
+            ps.setInt(1, teacherId);
+            resultSet = ps.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resultSet;
     }
-}
+     public void close() {
+        try {
+            if (db != null) {
+                db.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
+    
+
