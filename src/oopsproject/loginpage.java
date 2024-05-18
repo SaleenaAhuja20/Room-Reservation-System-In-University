@@ -17,14 +17,14 @@ import javax.swing.JTextField;
  *
  * @author Siloo
  */
-public class JFrame1 extends javax.swing.JFrame {
+public class loginpage extends javax.swing.JFrame {
     
     Connection conn = null;
     ResultSet rs = null;
     PreparedStatement ps = null;
     
 
-    public JFrame1(JButton btnlogin, JLabel jLabel1, JLabel jLabel2, JTextField txtemail, JPasswordField txtpassword) throws HeadlessException {
+    public loginpage(JButton btnlogin, JLabel jLabel1, JLabel jLabel2, JTextField txtemail, JPasswordField txtpassword) throws HeadlessException {
         this.btnlogin = btnlogin;
         this.jLabel1 = jLabel1;
         this.jLabel2 = jLabel2;
@@ -35,7 +35,7 @@ public class JFrame1 extends javax.swing.JFrame {
     /**
      * Creates new form JFrame1
      */
-    public JFrame1() {
+    public loginpage() {
         initComponents();
        
     }
@@ -123,16 +123,16 @@ public class JFrame1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(25, 25, 25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -206,13 +206,13 @@ public class JFrame1 extends javax.swing.JFrame {
               
               if(password.equals(dbPassword) && email.equals(dbEmail)){
                   LoginSuccess = true;
-                  JOptionPane.showMessageDialog(JFrame1.this, "Login successfully");
-                  new JFrame2().setVisible(true);
+                  JOptionPane.showMessageDialog(loginpage.this, "Login successfully");
+                  new teacherForm().setVisible(true);
                   break;
               } 
          }
               if(!LoginSuccess){
-                  JOptionPane.showMessageDialog(JFrame1.this, "Error! please fill correct information");
+                  JOptionPane.showMessageDialog(loginpage.this, "Error! please fill correct information");
               }
          }  catch (Exception ex) {
                 System.out.println(ex);
@@ -247,13 +247,13 @@ public class JFrame1 extends javax.swing.JFrame {
              
              if(adminpassword.equals(dbPassword) && adminEmail.equals(dbEmail)){
                  LoginSuccessfull = true;
-                  JOptionPane.showMessageDialog(JFrame1.this, "Login successfully");
-                  new JFrame4().setVisible(true);
+                  JOptionPane.showMessageDialog(loginpage.this, "Login successfully");
+                  new adminForm().setVisible(true);
                   break;
               }
          }
          if(!LoginSuccessfull){
-                  JOptionPane.showMessageDialog(JFrame1.this, "Error! please fill correct information");
+                  JOptionPane.showMessageDialog(loginpage.this, "Error! please fill correct information");
               }
              
          }  catch (Exception ex) {
@@ -288,20 +288,21 @@ public class JFrame1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrame1().setVisible(true);
+                new loginpage().setVisible(true);
             }
         });
     }

@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author Siloo
  */
-public class JFrame3 extends javax.swing.JFrame {
+public class MakeupForm extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrame3
      */
-    public JFrame3() {
+    public MakeupForm() {
         initComponents();
     }
 
@@ -189,7 +189,7 @@ public class JFrame3 extends javax.swing.JFrame {
 
     private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(JFrame3.this, "Your request has been sent to Admin");
+        JOptionPane.showMessageDialog(MakeupForm.this, "Your request has been sent to Admin");
     }//GEN-LAST:event_btnsubmitActionPerformed
 
     /**
@@ -209,20 +209,21 @@ public class JFrame3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MakeupForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MakeupForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MakeupForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MakeupForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrame3().setVisible(true);
+                new MakeupForm().setVisible(true);
             }
         });
     }

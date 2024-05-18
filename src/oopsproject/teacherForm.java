@@ -10,12 +10,12 @@ package oopsproject;
  *
  * @author Siloo
  */
-public class JFrame2 extends javax.swing.JFrame {
+public class teacherForm extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrame2
      */
-    public JFrame2() {
+    public teacherForm() {
         initComponents();
     }
 
@@ -79,7 +79,7 @@ public class JFrame2 extends javax.swing.JFrame {
 
     private void btnMakeupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMakeupActionPerformed
         // TODO add your handling code here:
-        new JFrame3().setVisible(true);
+        new MakeupForm().setVisible(true);
         
     }//GEN-LAST:event_btnMakeupActionPerformed
 
@@ -100,20 +100,21 @@ public class JFrame2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teacherForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teacherForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teacherForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teacherForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrame2().setVisible(true);
+                new teacherForm().setVisible(true);
             }
         });
     }
