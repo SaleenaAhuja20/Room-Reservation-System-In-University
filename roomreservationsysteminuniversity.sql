@@ -67,3 +67,21 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+// time table schedule table
+create table TimeTable(
+emailAddress varchar(250),
+subjectName varchar(250),
+dayName varchar(250),
+timings varchar(250),
+class varchar(250),
+RoomNo varchar(250),
+BuildingName varchar(250)
+);
+
+
+insert into  TimeTable values("syed.hassan@gmail.com","OOPS Theory",'Thursday' ,"3-6","BSCS2B", 502, '100');
+insert into  TimeTable values("syed.hassan@gmail.com","OOPS Theory",'Monday' ,"8-11","BSCS2A", 502, '100');
+insert into  TimeTable values("hurairizvi@gmail.com","OOPS LAB",'Friday' ,"10-01","BSCS2B", 102, '90');
+
