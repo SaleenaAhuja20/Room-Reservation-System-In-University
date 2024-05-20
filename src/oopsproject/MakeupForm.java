@@ -224,6 +224,7 @@ public class MakeupForm extends javax.swing.JFrame {
 
             statement.executeUpdate();
             JOptionPane.showMessageDialog(this, "Your request has been sent to Admin");
+            this.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }
