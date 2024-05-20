@@ -343,8 +343,11 @@ public class AddTeacher extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
             new AddTeacher().setVisible(true);
+            }
         });
     }
 
