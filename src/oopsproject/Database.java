@@ -18,7 +18,7 @@ class Database {
 
   public  Database(){ 
         try{
-     db =   DriverManager.getConnection( "jdbc:mysql://localhost:3306/roomreservationsysteminuniversity", "root", "abc123"); 
+     db =   DriverManager.getConnection( "jdbc:mysql://localhost:3306/roomreservationsysteminuniversity", "root", "abc.123"); 
         }
         catch(Exception e){
             
