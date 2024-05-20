@@ -4,7 +4,9 @@
  */
 package oopsproject;
 
-
+import javax.swing.*;
+import java.awt.*;
+import java.sql.*;
 
 /**
  *
@@ -13,13 +15,18 @@ package oopsproject;
 public class teacherForm extends javax.swing.JFrame {
     private int teacherId;
     
+        public teacherForm() {
+        this.initComponents();
+    }
 
     /**
      * Creates new form JFrame2
      */
-    public teacherForm() {
-        initComponents();
+    public teacherForm(int teacherId) {
+        this.teacherId = teacherId;
+        this.initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,7 +99,9 @@ public class teacherForm extends javax.swing.JFrame {
        
     private void btnshowscheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshowscheduleActionPerformed
         // TODO add your handling code here:
-        
+        scheduleform schduleform = new scheduleform(this.teacherId);
+        this.setVisible(false);
+        schduleform.setVisible(true);
     }//GEN-LAST:event_btnshowscheduleActionPerformed
 
     /**
@@ -136,4 +145,6 @@ public class teacherForm extends javax.swing.JFrame {
     private javax.swing.JButton btnshowschedule;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+   
 }

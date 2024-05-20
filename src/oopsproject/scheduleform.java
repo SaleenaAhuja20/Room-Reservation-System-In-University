@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package oops.projects;
+package oopsproject;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -12,18 +12,26 @@ import javax.swing.table.DefaultTableModel;
  */
 public class scheduleform extends javax.swing.JFrame {
 
- 
-    public scheduleform() {
+ private int teacherId;
+       public scheduleform() {
+        initComponents();
+       }
+    public scheduleform(int teacherId) {
+        this.teacherId = teacherId;
         initComponents();
         
         // load schedule data
         
          // Column names
-        String[] columnNames = {"SubjectName", "Day", "Timings", "Class", "RoomNo", "BuildingName"};
+        String[] columnNames = {"Teacher_Name", "Day", "Slot", "Room", "Section"};
         
         String emailAddress = "syed.hassan@gmail.com";
         Database db = new Database();
-        String query = "select * from TimeTable where emailAddress  = '"+ emailAddress +"'";
+        //String query = "select * from TimeTable where emailAddress  = '"+ emailAddress +"'";
+        String query  = "SELECT * FROM schedule where Teacher_id= "  + this.teacherId;
+        
+        // this is one teacher r
+        
         java.sql.ResultSet resultSet = db.fatchData(query);
         
           // Data for the table
@@ -35,19 +43,18 @@ public class scheduleform extends javax.swing.JFrame {
          
            while (resultSet.next()) {
             
-            String subjectName = resultSet.getString("subjectName");
-            String dayName = resultSet.getString("dayName");
-            String timings = resultSet.getString("timings");
-            String className = resultSet.getString("class");
-            int RoomNo = resultSet.getInt("RoomNo");
-            String BuildName = resultSet.getString("BuildingName");
+            String teacherName = resultSet.getString("Teacher_Name");
+            String day = resultSet.getString("Day");
+            String slot = resultSet.getString("Slot");
+            String room = resultSet.getString("Room");
+            String section = resultSet.getString("Section");
+      
 
-            data[i][0] = subjectName;
-            data[i][1] = dayName;
-            data[i][2] = timings;
-            data[i][3] = className;
-            data[i][4] = RoomNo;
-            data[i][5] = BuildName;
+            data[i][0] = teacherName;
+            data[i][1] = day;
+            data[i][2] = slot;
+            data[i][3] = room;
+            data[i][4] = section;
             i++;
                  
          }
@@ -72,7 +79,7 @@ public class scheduleform extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,6 +112,7 @@ public class scheduleform extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

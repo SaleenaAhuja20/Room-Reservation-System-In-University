@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 18, 2024 at 06:11 PM
+-- Generation Time: May 20, 2024 at 09:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -42,6 +42,22 @@ INSERT INTO `admin` (`Admin_Name`, `Admin_Email`, `Admin_Password`, `Admin_Id`) 
 ('Sahil Kumar Valecha', 'bscs2312172@szabist.pk', 'szabist+-72', 1),
 ('Saleena Ahuja', 'bscs2312174@szabist.pk', 'Ahuja038#', 2),
 ('Paras Parveen', 'bscs2312168@szabist.pk', 'paras#123', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `makeupform`
+--
+
+CREATE TABLE `makeupform` (
+  `Name` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Course` varchar(255) NOT NULL,
+  `section` varchar(255) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `slot` varchar(255) NOT NULL,
+  `capacity_of_students` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 

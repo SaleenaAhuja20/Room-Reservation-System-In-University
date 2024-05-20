@@ -40,28 +40,9 @@ class Database {
             }
             return null;
         }
-    public ResultSet fetchTeacherSchedule(int teacherId){
-        ResultSet resultSet = null;
-        try {
-            String query = "SELECT * FROM schedule WHERE Teacher_id = ?";
-            PreparedStatement ps = db.prepareStatement(query);
-            ps.setInt(1, teacherId);
-            resultSet = ps.executeQuery();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return resultSet;
+    
     }
-     public void close() {
-        try {
-            if (db != null) {
-                db.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    }
+    
 
     
 
