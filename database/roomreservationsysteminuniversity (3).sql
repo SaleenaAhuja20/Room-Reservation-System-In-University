@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 20, 2024 at 09:55 AM
+-- Generation Time: May 20, 2024 at 12:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -58,6 +58,13 @@ CREATE TABLE `makeupform` (
   `slot` varchar(255) NOT NULL,
   `capacity_of_students` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `makeupform`
+--
+
+INSERT INTO `makeupform` (`Name`, `Email`, `Course`, `section`, `day`, `slot`, `capacity_of_students`) VALUES
+('Syed Hassan', 'syed.hassan@szabist.pk', 'Object Oriented Programming', '2B', 'Wednesday', '8-11', 30);
 
 -- --------------------------------------------------------
 
