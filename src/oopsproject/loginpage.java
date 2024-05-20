@@ -61,6 +61,8 @@ public class loginpage extends javax.swing.JFrame {
         btnloginadmin = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        chkteacherpass = new javax.swing.JCheckBox();
+        chkadminpass = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("LOGIN PAGE");
@@ -110,49 +112,69 @@ public class loginpage extends javax.swing.JFrame {
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextField2.setText("ADMIN LOGIN SYSTEM");
 
+        chkteacherpass.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        chkteacherpass.setText("check password");
+        chkteacherpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkteacherpassActionPerformed(evt);
+            }
+        });
+
+        chkadminpass.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        chkadminpass.setText("check password");
+        chkadminpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkadminpassActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
+                .addGap(127, 127, 127)
                 .addComponent(btnlogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnloginadmin)
-                .addGap(103, 103, 103))
+                .addGap(99, 99, 99))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtemailadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26))))
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtemailadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)))
+                .addContainerGap(9, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(chkteacherpass)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtpasswordadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(9, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtpasswordadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(chkadminpass))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +195,15 @@ public class loginpage extends javax.swing.JFrame {
                     .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(txtpasswordadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chkteacherpass)
+                    .addComponent(chkadminpass))
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnloginadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71))
+                .addGap(45, 45, 45))
         );
 
         pack();
@@ -195,8 +221,9 @@ public class loginpage extends javax.swing.JFrame {
  
          try {
              boolean LoginSuccess = false;
+             int teacherId = -1;
          while (resultSet.next()) {
-            int ID = resultSet.getInt("Teacher_id");
+            teacherId = resultSet.getInt("Teacher_id");
             String dbEmail= resultSet.getString("Teacher_Email");
            String dbPassword= resultSet.getString("Teacher_Password");
             String name = resultSet.getString("Teacher_Name");
@@ -207,9 +234,12 @@ public class loginpage extends javax.swing.JFrame {
               if(password.equals(dbPassword) && email.equals(dbEmail)){
                   LoginSuccess = true;
                   JOptionPane.showMessageDialog(loginpage.this, "Login successfully");
-                  new teacherForm().setVisible(true);
-                  break;
+                  new teacherForm(teacherId).setVisible(true);
+                  this.setVisible(false);
+                  
+                
               } 
+              
          }
               if(!LoginSuccess){
                   JOptionPane.showMessageDialog(loginpage.this, "Error! please fill correct information");
@@ -220,10 +250,12 @@ public class loginpage extends javax.swing.JFrame {
              try{
                   if (resultSet != null) {
                 resultSet.close();
-            }
-                  conn.close();
+
+                  }
+               //   conn.close();
+                  
              }catch (Exception e) {
-               System.out.println(e);
+              e.printStackTrace();
         }
          }
                
@@ -271,6 +303,27 @@ public class loginpage extends javax.swing.JFrame {
           
     }//GEN-LAST:event_btnloginadminActionPerformed
 
+    private void chkteacherpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkteacherpassActionPerformed
+        // TODO add your handling code here:
+        if(chkteacherpass.isSelected()){
+        txtpassword.setEchoChar((char)0);
+    }
+        else {
+            txtpassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_chkteacherpassActionPerformed
+
+    private void chkadminpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkadminpassActionPerformed
+        // TODO add your handling code here:
+        if(chkadminpass.isSelected()){
+            txtpasswordadmin.setEchoChar((char)0);
+            
+        }
+        else{
+            txtpasswordadmin.setEchoChar('*');
+        }
+    }//GEN-LAST:event_chkadminpassActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,6 +363,8 @@ public class loginpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnlogin;
     private javax.swing.JButton btnloginadmin;
+    private javax.swing.JCheckBox chkadminpass;
+    private javax.swing.JCheckBox chkteacherpass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
