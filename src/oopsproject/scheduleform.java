@@ -32,7 +32,7 @@ public class scheduleform extends javax.swing.JFrame {
         
         // this is one teacher r
         
-        java.sql.ResultSet resultSet = db.fatchData(query);
+        java.sql.ResultSet resultSet = db.fetchData(query);
         
           // Data for the table
           

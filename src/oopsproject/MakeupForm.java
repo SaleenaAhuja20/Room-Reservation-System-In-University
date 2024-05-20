@@ -4,6 +4,9 @@
  */
 package oopsproject;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 /**
@@ -84,6 +87,11 @@ public class MakeupForm extends javax.swing.JFrame {
         txtmakeupemail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         txtname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnameActionPerformed(evt);
+            }
+        });
 
         txtmakeupcourse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -189,15 +197,41 @@ public class MakeupForm extends javax.swing.JFrame {
 
     private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
         // TODO add your handling code here:
-        if(txtname.getText().trim().isEmpty() || txtmakeupemail.getText().trim().isEmpty() || txtmakeupcourse.getText().trim().isEmpty() || txtmakeupsection.getText().trim().isEmpty() ){
-            JOptionPane.showMessageDialog(this, "Please fill information");
-            txtname.grabFocus();
+         String name = txtname.getText().trim();
+        String email = txtmakeupemail.getText().trim();
+        String course = txtmakeupcourse.getText().trim();
+        String capacity = (String) cmbcapacity.getSelectedItem();
+        String section = txtmakeupsection.getText().trim();
+        String day = (String) cmbday.getSelectedItem();
+        String slot = (String) cmbslot.getSelectedItem();
+
+        if(name.isEmpty() || email.isEmpty() || course.isEmpty() || capacity.isEmpty() || section.isEmpty() || day.isEmpty() || slot.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields");
             return;
-        } else{
-            JOptionPane.showMessageDialog(MakeupForm.this, "Your request has been sent to Admin");
         }
-        
+
+        Database db = new Database();
+        String sql = "INSERT INTO makeupform (Name, Email, Course, Capacity_Of_Students, Section, Day, Slot) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (PreparedStatement statement = db.prepareStatement(sql)) {
+            statement.setString(1, name);
+            statement.setString(2, email);
+            statement.setString(3, course);
+            statement.setString(4, capacity);
+            statement.setString(5, section);
+            statement.setString(6, day);
+            statement.setString(7, slot);
+
+            statement.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Your request has been sent to Admin");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
     }//GEN-LAST:event_btnsubmitActionPerformed
+
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnameActionPerformed
 
     /**
      * @param args the command line arguments

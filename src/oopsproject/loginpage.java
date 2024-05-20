@@ -113,7 +113,7 @@ public class loginpage extends javax.swing.JFrame {
         jTextField2.setText("ADMIN LOGIN SYSTEM");
 
         chkteacherpass.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        chkteacherpass.setText("check password");
+        chkteacherpass.setText("show password");
         chkteacherpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkteacherpassActionPerformed(evt);
@@ -121,7 +121,7 @@ public class loginpage extends javax.swing.JFrame {
         });
 
         chkadminpass.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        chkadminpass.setText("check password");
+        chkadminpass.setText("show password");
         chkadminpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkadminpassActionPerformed(evt);
@@ -217,7 +217,7 @@ public class loginpage extends javax.swing.JFrame {
  
       String query =  "select  Teacher_id ,Teacher_Password, Teacher_Name, Teacher_Email, Course from teacher  where Teacher_Email = \"" +  email +"\"";
       Database db = new Database();
-      ResultSet resultSet = db.fatchData(query);
+      ResultSet resultSet = db.fetchData(query);
  
          try {
              boolean LoginSuccess = false;
@@ -267,7 +267,7 @@ public class loginpage extends javax.swing.JFrame {
         String adminpassword = txtpasswordadmin.getText();
         String query =  "select  Admin_Id ,Admin_Password, Admin_Name, Admin_Email from admin  where Admin_Email = \"" +  adminEmail +"\"";
         Database db = new Database();
-      ResultSet resultSet = db.fatchData(query);
+      ResultSet resultSet = db.fetchData(query);
       try {
           boolean LoginSuccessfull = false;
          while (resultSet.next()) {
