@@ -77,6 +77,16 @@ Capacity int not null,
 BuildingName varchar(250) not null
 )
 
+insert into room values(2,202,40, 100);
+insert into room values(3,401,50, 99);
+insert into room values(4,502,30, 99);
+insert into room values(5,203,40, 100);
+insert into room values(6,403,50, 100);
+insert into room values(7,508,30, 100);
+insert into room values(8,205,40, 100);
+insert into room values(9,406,50, 99);
+insert into room values(10,101,30, 99);
+
 -- Room Booking Table
 Create table RoomBooking (
 teacherId int not null,

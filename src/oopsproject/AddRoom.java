@@ -147,13 +147,13 @@ public class AddRoom extends javax.swing.JFrame {
         }
         // TODO add your handling code here:
         int _room = Integer.parseInt(roomNo.getText().trim());
-        int _capacity = Integer.parseInt(capacity.getText().trim());
+        int _capacity = Integer.parseInt(capacity.getText().trim());// leading and trailing
         String buildingName = BuildingName.getText().trim();
     
 
        
 
-        Database db = new Database();
+        Database db = new Database();//object handles connections to your database
         String sql = "INSERT INTO Room (RoomNo, Capacity,BuildingName) VALUES (?, ?, ?)";
 
         try (PreparedStatement statement = db.prepareStatement(sql)) {
