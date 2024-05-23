@@ -10,7 +10,7 @@ public class Database {
 
     public Database() {
         try {
-            db = DriverManager.getConnection("jdbc:mysql://localhost:3306/roomreservationsysteminuniversity", "root", "abc.123");
+            db = DriverManager.getConnection("jdbc:mysql://localhost:3306/roomreservationsysteminuniversity", "root", "fahad");
         } catch (Exception e) {
             System.out.println(e);
             

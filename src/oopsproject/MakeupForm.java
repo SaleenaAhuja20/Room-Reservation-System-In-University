@@ -33,15 +33,11 @@ public class MakeupForm extends javax.swing.JFrame {
 
         jTextField4 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtmakeupemail = new javax.swing.JTextField();
-        txtname = new javax.swing.JTextField();
         txtmakeupcourse = new javax.swing.JTextField();
         cmbcapacity = new javax.swing.JComboBox<>();
         txtmakeupsection = new javax.swing.JTextField();
@@ -58,16 +54,8 @@ public class MakeupForm extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("MAKEUP CLASS FORM");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Name");
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Day");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Email");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,15 +71,6 @@ public class MakeupForm extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Slot");
-
-        txtmakeupemail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        txtname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnameActionPerformed(evt);
-            }
-        });
 
         txtmakeupcourse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -115,34 +94,28 @@ public class MakeupForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1)
+            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(cmbcapacity, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addComponent(cmbcapacity, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(6, 6, 6)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtmakeupemail, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtname, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtmakeupcourse, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtmakeupsection, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addContainerGap())
+                                    .addComponent(txtmakeupsection, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(cmbday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,24 +123,17 @@ public class MakeupForm extends javax.swing.JFrame {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cmbslot, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 22, Short.MAX_VALUE))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(btnsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(16, 16, 16))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(btnsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtmakeupemail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtmakeupcourse, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,7 +154,7 @@ public class MakeupForm extends javax.swing.JFrame {
                     .addComponent(cmbslot, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(btnsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addContainerGap())
         );
 
         pack();
@@ -197,30 +163,29 @@ public class MakeupForm extends javax.swing.JFrame {
 
     private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
         // TODO add your handling code here:
-         String name = txtname.getText().trim();
-        String email = txtmakeupemail.getText().trim();
+     
         String course = txtmakeupcourse.getText().trim();
         String capacity = (String) cmbcapacity.getSelectedItem();
         String section = txtmakeupsection.getText().trim();
         String day = (String) cmbday.getSelectedItem();
         String slot = (String) cmbslot.getSelectedItem();
 
-        if(name.isEmpty() || email.isEmpty() || course.isEmpty() || capacity.isEmpty() || section.isEmpty() || day.isEmpty() || slot.isEmpty()) {
+        if( course.isEmpty() || capacity.isEmpty() || section.isEmpty() || day.isEmpty() || slot.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields");
             return;
         }
 
         Database db = new Database();
-        String sql = "INSERT INTO makeupform (Name, Email, Course, Capacity_Of_Students, Section, Day, Slot) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO makeupform (TeacherId, Course, capacity_of_students, section, day, slot, request_status) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement statement = db.prepareStatement(sql)) {
-            statement.setString(1, name);
-            statement.setString(2, email);
-            statement.setString(3, course);
-            statement.setString(4, capacity);
-            statement.setString(5, section);
-            statement.setString(6, day);
-            statement.setString(7, slot);
+            statement.setInt(1, LoginInformation.TeacherId);
+            statement.setString(2, course);
+            statement.setString(3, capacity);
+            statement.setString(4, section);
+            statement.setString(5, day);
+            statement.setString(6, slot);
+            statement.setString(7, "Pending");
 
             statement.executeUpdate();
             JOptionPane.showMessageDialog(this, "Your request has been sent to Admin");
@@ -229,10 +194,6 @@ public class MakeupForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_btnsubmitActionPerformed
-
-    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,9 +236,7 @@ public class MakeupForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbcapacity;
     private javax.swing.JComboBox<String> cmbday;
     private javax.swing.JComboBox<String> cmbslot;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -285,8 +244,6 @@ public class MakeupForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField txtmakeupcourse;
-    private javax.swing.JTextField txtmakeupemail;
     private javax.swing.JTextField txtmakeupsection;
-    private javax.swing.JTextField txtname;
     // End of variables declaration//GEN-END:variables
 }

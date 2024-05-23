@@ -234,6 +234,8 @@ public class loginpage extends javax.swing.JFrame {
               if(password.equals(dbPassword) && email.equals(dbEmail)){
                   LoginSuccess = true;
                   JOptionPane.showMessageDialog(loginpage.this, "Login successfully");
+                  LoginInformation.TeacherId = teacherId;
+                  LoginInformation.TeacherName = name;
                   new teacherForm(teacherId).setVisible(true);
                   this.setVisible(false);
                   
@@ -280,6 +282,7 @@ public class loginpage extends javax.swing.JFrame {
              if(adminpassword.equals(dbPassword) && adminEmail.equals(dbEmail)){
                  LoginSuccessfull = true;
                   JOptionPane.showMessageDialog(loginpage.this, "Login successfully");
+                  
                   new adminForm().setVisible(true);
                   break;
               }

@@ -50,23 +50,40 @@ INSERT INTO `admin` (`Admin_Name`, `Admin_Email`, `Admin_Password`, `Admin_Id`) 
 --
 
 CREATE TABLE `makeupform` (
-  `Name` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
+`Id`  int auto_increment not null primary key,
+  `TeacherId` int Not Null,
   `Course` varchar(255) NOT NULL,
   `section` varchar(255) NOT NULL,
   `day` varchar(255) NOT NULL,
   `slot` varchar(255) NOT NULL,
-  `capacity_of_students` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+  `capacity_of_students` int NOT NULL,
+  `request_status` varchar(250)
+);
 --
 -- Dumping data for table `makeupform`
 --
 
-INSERT INTO `makeupform` (`Name`, `Email`, `Course`, `section`, `day`, `slot`, `capacity_of_students`) VALUES
-('Syed Hassan', 'syed.hassan@szabist.pk', 'Object Oriented Programming', '2B', 'Wednesday', '8-11', 30);
+INSERT INTO `makeupform` (`TeacherId`,`Course`, `section`, `day`, `slot`, `capacity_of_students`,`request_status` ) VALUES
+(7, 'Object Oriented Programming', '2B', 'Wednesday', '8-11', 30, 'Pending');
 
 -- --------------------------------------------------------
+
+--- Room Table
+
+Create table Room (
+roomId int auto_increment not null primary key,
+RoomNo int unique,
+Capacity int not null,
+BuildingName varchar(250) not null
+)
+
+-- Room Booking Table
+Create table RoomBooking (
+teacherId int not null,
+roomId int not null,
+slot varchar(250),
+day varchar(250)
+)
 
 --
 -- Table structure for table `schedule`
@@ -79,7 +96,7 @@ CREATE TABLE `schedule` (
   `Slot` varchar(255) DEFAULT NULL,
   `Room` varchar(255) NOT NULL,
   `Section` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) 
 
 --
 -- Dumping data for table `schedule`

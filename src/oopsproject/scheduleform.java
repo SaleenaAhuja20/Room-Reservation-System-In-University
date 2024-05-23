@@ -48,6 +48,10 @@ public class scheduleform extends javax.swing.JFrame {
             String slot = resultSet.getString("Slot");
             String room = resultSet.getString("Room");
             String section = resultSet.getString("Section");
+            
+            if (teacherName.trim().isEmpty()){
+                teacherName = LoginInformation.TeacherName;
+            }
       
 
             data[i][0] = teacherName;
